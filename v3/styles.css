@@ -1,0 +1,68 @@
+
+body{
+	
+	font-family: Helvetica !important;
+	font-size: 15px !important;
+}
+
+#wrapper {
+    margin: 15px auto;
+	padding-top:15px;
+	padding-bottom:15px;
+    max-width: 1024px;
+	background-color:rgba(255,255,255, 0.8); /* Light grey, 50% transparent */
+}
+#header>.row {
+    height: 100%;
+}
+#logoContainer {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    border-color: purple;
+    overflow: hidden;
+}
+#logoContainer img {
+    max-height: 80px;
+	max-width: 100%;
+}
+#content {
+    border-color: green;
+    min-height: 300px;
+}
+
+.clearer{
+	clear: both; /* see http://stackoverflow.com/questions/19354845/div-has-no-height-even-if-it-has-content */
+}
+
+.imgFrame{
+	display:inline-block;
+	max-width:150px;
+	max-height:200px;
+	overflow:hidden;
+	padding: 0 10px;
+}
+.imgFrame img, .imgFrame p {
+	display:block;
+	max-width:150px;
+	max-height:150px;
+	
+	font-size: 10px;
+	font-style: italic;
+}
+
+.right {
+	float:right;
+}
+.left {
+	float:left;
+}
+
+#footer {
+	font-size: 10px;
+}
+
+#footer hr{
+	border-style:solid;
+	border-color:#AAA;
+}
