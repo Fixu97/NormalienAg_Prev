@@ -12,10 +12,7 @@ body{
 	padding-top:15px;
 	padding-bottom:15px;
     max-width: 1024px;
-	border-style:solid;
-	border-width:2px;
-	border-color:#AAA;
-	/*border-radius: 5px;*/
+    box-shadow: 8px 8px #999;
 	background-color:rgba(255,255,255, 0.8); /* Light grey, 50% transparent */
 }
 #header>.row {
@@ -41,9 +38,34 @@ body{
 	clear: both; /* see http://stackoverflow.com/questions/19354845/div-has-no-height-even-if-it-has-content */
 }
 
+#descriptionContainer{
+    padding:15px;
+}
+
+.homeHistRow {
+    background-color:#ddd;
+    margin-bottom:30px;
+    padding:15px 0 15px 0;
+    box-shadow: 5px 5px #bbb;
+}
+
 .homeHistRow img{
 	max-width:100%;
 	max-height:100%;
+    
+    border-style: solid;
+    border-color:#bbb;
+    border-width:2px;
+}
+
+.homeHistRow .description{
+    font-size: 1.5em;
+}
+.homeHistRow .img{
+}
+
+#map{
+    height:400px;
 }
 
 .right {
@@ -51,10 +73,6 @@ body{
 }
 .left {
 	float:left;
-}
-
-#footer {
-	font-size: 10px;
 }
 
 #footer hr{
