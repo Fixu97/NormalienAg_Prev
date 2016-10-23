@@ -1,0 +1,48 @@
+#slideShow{
+    position:absolute;
+    max-width:100%;
+    margin:auto;
+
+    border-style:solid;
+    border-color:purple;
+}
+
+#slideShow-header{
+    background-color:#bbb;
+
+    border-style:solid;
+    border-color:red;
+}
+#slideShow-header button{
+    float:right;
+    max-height:100%;
+    max-width:10%;
+    position:relative;
+    display:block;
+}
+
+#slideShow-close{
+    background-color:red;
+    float:right;
+    width:1.2em;
+    height:1.2em;
+    border-radius:50%;
+    text-align:center;
+}
+
+#slideShow-imgContent{
+    position:relative;
+    background-color:black;
+    text-align:center;
+
+    border-style:solid;
+    border-color:black;
+}
+#slideShow-imgContent-desc{
+    position:absolute;
+    margin:auto;
+    padding:5px;
+    background-color:rgba(64,64,64,0.6);
+    bottom:0;
+    color:rgb(200,200,200);
+}

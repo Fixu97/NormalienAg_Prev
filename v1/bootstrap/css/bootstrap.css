@@ -4492,9 +4492,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
+
+/*Navbar*/
 .navbar-default {
   background-color: #ddd;
   border-color: #bbb;
+
+  font-size:1.5em;
 }
 .navbar-default .navbar-brand {
   color: #777;
