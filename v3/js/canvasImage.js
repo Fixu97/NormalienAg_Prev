@@ -12,49 +12,29 @@ window.CanvasImage = function (context, x, y, radius, imgSrc) {
         return circle;
     };
     
-    this.getImage = function (successHandler, errorHandler) {
-        var img = new Image();
-        img.onload = successHandler;
-        img.onerror = errorHandler;
-        img.src = this.imgSrc;
-    };
-    
     this.draw = function (completionHandler) {
         
         // Get save instance of 'this'
         var self = this;
         
         // asynchronos call
-        this.getImage(function () {
+        this.getImage(this.imgSrc, function () {
             
             // save context
             self.c.save();
             
             // in this context, 'this' is the image
-            var img = this;
+            var img = this,
+                diameter = 2 * self.radius;
             
-            // Get properties
-            var width = img.width;
-            var height = img.height;
-            var aspectRatio = width / height;
-            
-            var newWidth,
-                newHeight;
-            
-            if (width > height){
-                newHeight = 2 * self.radius;
-                newWidth = newHeight * aspectRatio;
-            } else {
-                newWidth = 2 * self.radius;
-                newHeight = newWidth / aspectRatio;
-            }
+            var prop = self.getNewImgProportion(img, diameter, diameter)
             
             self.getCircle().draw();
             self.c.clip();
             
-            var pos = self.getImgPosFromCenter(self.x, self.y, newWidth, newHeight);
+            var pos = self.getImgPosFromCenter(self.x, self.y, prop.width, prop.height);
             
-            self.c.drawImage(img, pos.x, pos.y, newWidth, newHeight);
+            self.c.drawImage(img, pos.x, pos.y, prop.width, prop.height);
             self.c.stroke();
             
             // restore contest
@@ -62,21 +42,11 @@ window.CanvasImage = function (context, x, y, radius, imgSrc) {
             
             // call completionHandler
             if (completionHandler && typeof completionHandler === "function"){
-                completionHandler();
+                completionHandler(self);
             }
         });
     
     };
-    
-    
-    this.getImgPosFromCenter = function (centerX, centerY, width, height) {
-        "use strict";
-        
-        var pos = {};
-        
-        pos.x = centerX - 0.5 * width;
-        pos.y = centerY - 0.5 * height;
-        
-        return pos;
-    };
 };
+
+window.CanvasImage.prototype = Object.create(window.ImageHelper.prototype);
